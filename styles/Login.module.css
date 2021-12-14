@@ -1,5 +1,5 @@
-.mainCard {
-  max-width: 400px;
+.loginForm {
+  max-width: 300px;
   width: calc(100% - 50px);
   position: absolute;
   top: 50%;
@@ -7,9 +7,6 @@
   transform: translate(-50%, -50%);
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+.loginFormForgot {
+  float: right;
 }

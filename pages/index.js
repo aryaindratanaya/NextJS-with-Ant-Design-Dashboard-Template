@@ -1,12 +1,15 @@
 import Head from 'next/head'
 
-import { Card, Button, Layout } from 'antd'
+import { Form, Input, Button, Checkbox } from 'antd'
+import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
-import s from 'styles/Home.module.css'
+import s from 'styles/Login.module.css'
 
-const { Footer } = Layout
+export default function Login() {
+  const onFinish = (values) => {
+    console.log(values)
+  }
 
-export default function Home() {
   return (
     <div>
       <Head>
@@ -16,15 +19,51 @@ export default function Home() {
       </Head>
 
       <main>
-        <Card className={s.mainCard}>
-          On the right is an antd primary button{' '}
-          <Button type="primary">Hello World!</Button>
-        </Card>
-      </main>
+        <Form
+          name="normal_login"
+          className={s.loginForm}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+        >
+          <Form.Item
+            name="username"
+            rules={[{ required: true, message: 'Please input your Username!' }]}
+          >
+            <Input prefix={<UserOutlined />} placeholder="Username" />
+          </Form.Item>
+          <Form.Item
+            name="password"
+            rules={[{ required: true, message: 'Please input your Password!' }]}
+          >
+            <Input
+              prefix={<LockOutlined />}
+              type="password"
+              placeholder="Password"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Form.Item name="remember" valuePropName="checked" noStyle>
+              <Checkbox>Remember me</Checkbox>
+            </Form.Item>
 
-      <footer>
-        <Footer className={s.footer}>This is a footer</Footer>
-      </footer>
+            <a className={s.loginFormForgot} href="">
+              Forgot password
+            </a>
+          </Form.Item>
+
+          <Form.Item>
+            <Button
+              type="primary"
+              htmlType="submit"
+              className="login-form-button"
+              block
+            >
+              Log in
+            </Button>
+            Or <a href="">register now!</a>
+          </Form.Item>
+        </Form>
+      </main>
     </div>
   )
 }
