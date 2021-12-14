@@ -1,13 +1,21 @@
 import Head from 'next/head'
+import Image from 'rc-image'
+import { useRouter } from 'next/router'
 
-import { Form, Input, Button, Checkbox } from 'antd'
+import { Form, Input, Button, Checkbox, Typography, Layout } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 import s from 'styles/Login.module.css'
 
+const { Title, Text } = Typography
+const { Footer } = Layout
+
 export default function Login() {
+  const router = useRouter()
+
   const onFinish = (values) => {
     console.log(values)
+    router.push('/dashboard')
   }
 
   return (
@@ -18,7 +26,24 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className={s.mainContent}>
+        <div className={s.mainBanner}>
+          <Image
+            src="/images/logo without text.png"
+            width={44}
+            height={40}
+            className={s.logo}
+          />
+          <Title style={{ marginBottom: 0 }}>Full Name</Title>
+        </div>
+
+        <div className={s.tagline}>
+          <Text type="secondary">
+            A full description or a short tag line of the app or the company
+            goes here.
+          </Text>
+        </div>
+
         <Form
           name="normal_login"
           className={s.loginForm}
@@ -64,6 +89,8 @@ export default function Login() {
           </Form.Item>
         </Form>
       </main>
+
+      <Footer>© 2021 by Company Name</Footer>
     </div>
   )
 }
