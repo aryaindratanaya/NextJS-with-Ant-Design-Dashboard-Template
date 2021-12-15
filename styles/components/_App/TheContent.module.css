@@ -1,0 +1,12 @@
+.content {
+  overflow: initial;
+  min-height: calc(100vh - 155px);
+}
+
+.contentBigScr {
+  margin: 85px 16px 0;
+}
+
+.contentSmallScr {
+  margin: 21px 16px 0;
+}
