@@ -11,3 +11,10 @@
   top: 0;
   z-index: 1;
 }
+
+.leftItems {
+  float: left;
+}
+.rightItems {
+  float: right;
+}
