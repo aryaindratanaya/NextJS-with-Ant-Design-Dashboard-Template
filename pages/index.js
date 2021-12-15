@@ -8,7 +8,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 import s from 'styles/Login.module.css'
 
 const { Text } = Typography
-const { Footer } = Layout
+const { Header, Footer } = Layout
 
 export default function Login() {
   const router = useRouter()
@@ -26,9 +26,13 @@ export default function Login() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header className={s.header}>
+        <Image src="/images/white-logo.png" width={135} height={40} />
+      </Header>
+
       <main className={s.mainContent}>
         <div className={s.mainBanner}>
-          <div className={s.logo}>
+          <div className={s.logoWrapper}>
             <Image src="/images/logo.png" width={135} height={40} />
           </div>
           <div className={s.tagline}>

@@ -1,5 +1,10 @@
+.header {
+  padding: 0 10px 0;
+}
+
 .mainContent {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 64px - 70px);
+  /* 100vh - header - footer */
 }
 
 .mainBanner {
@@ -8,7 +13,7 @@
   padding-top: 110px;
 }
 
-.logo {
+.logoWrapper {
   width: fit-content;
   margin: auto;
   margin-bottom: 15px;
