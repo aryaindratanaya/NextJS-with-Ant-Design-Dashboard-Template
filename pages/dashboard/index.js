@@ -9,6 +9,60 @@ export default function Dashboard() {
       <Col span={12}>
         <Card title="title">Content</Card>
       </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
+      <Col span={12}>
+        <Card title="title">Content</Card>
+      </Col>
     </Row>
   )
 }
