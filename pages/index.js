@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'rc-image'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 
 import { Form, Input, Button, Checkbox, Typography, Layout } from 'antd'

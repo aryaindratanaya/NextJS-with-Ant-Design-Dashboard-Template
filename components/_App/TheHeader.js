@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { Layout, Menu, Dropdown, Avatar } from 'antd'
 import {
   UserOutlined,
@@ -43,7 +45,7 @@ export default function TheHeader({
                 Settings
               </Menu.Item>
               <Menu.Item key="logout" icon={<LogoutOutlined />} danger>
-                Logout
+                <Link href="/">Logout</Link>
               </Menu.Item>
             </Menu>
           }
