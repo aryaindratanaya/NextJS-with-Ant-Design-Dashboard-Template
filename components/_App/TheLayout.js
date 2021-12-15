@@ -36,7 +36,7 @@ export default function TheLayout({ children }) {
           setSiderCllps={setSiderCllps}
           setDrawerVsbl={setDrawerVsbl}
         />
-        <TheContent isScreenBig={isScreenBig}>{children}</TheContent>
+        <TheContent>{children}</TheContent>
         <TheFooter />
       </Layout>
     </Layout>

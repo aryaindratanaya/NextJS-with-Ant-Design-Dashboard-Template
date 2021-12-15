@@ -4,13 +4,3 @@
   box-shadow: 0 3px 5px #ccc;
   font-size: 20px;
 }
-
-.headerBigScr {
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-}
-
-.headerSmallScr {
-  position: static;
-}
