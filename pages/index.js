@@ -7,7 +7,7 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons'
 
 import s from 'styles/Login.module.css'
 
-const { Title, Text } = Typography
+const { Text } = Typography
 const { Footer } = Layout
 
 export default function Login() {
@@ -28,20 +28,15 @@ export default function Login() {
 
       <main className={s.mainContent}>
         <div className={s.mainBanner}>
-          <Image
-            src="/images/logo without text.png"
-            width={44}
-            height={40}
-            className={s.logo}
-          />
-          <Title style={{ marginBottom: 0 }}>Full Name</Title>
-        </div>
-
-        <div className={s.tagline}>
-          <Text type="secondary">
-            A full description or a short tag line of the app or the company
-            goes here.
-          </Text>
+          <div className={s.logo}>
+            <Image src="/images/logo.png" width={135} height={40} />
+          </div>
+          <div className={s.tagline}>
+            <Text type="secondary">
+              A full description or a short tag line of the app or the company
+              goes here.
+            </Text>
+          </div>
         </div>
 
         <Form
