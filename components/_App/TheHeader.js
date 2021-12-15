@@ -16,11 +16,7 @@ export default function TheHeader({
   setDrawerVsbl,
 }) {
   return (
-    <Header
-      className={`${s.header} ${
-        isScreenBig ? s.headerBigScr : s.headerSmallScr
-      }`}
-    >
+    <Header className={`${s.header} ${isScreenBig && s.headerSticky}`}>
       {isScreenBig ? (
         isSiderCllps ? (
           <MenuUnfoldOutlined onClick={() => setSiderCllps((v) => !v)} />

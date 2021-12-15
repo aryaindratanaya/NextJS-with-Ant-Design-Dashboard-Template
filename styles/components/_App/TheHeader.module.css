@@ -4,3 +4,10 @@
   box-shadow: 0 3px 5px #ccc;
   font-size: 20px;
 }
+
+.headerSticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
