@@ -32,13 +32,13 @@ function MyApp({ Component, pageProps, router }) {
 
       <CookiesProvider>
         <AuthProvider>
-          {router.route == '/' ? (
-            <Component {...pageProps} />
-          ) : (
+          {router.pathname.startsWith('/dashboard') ? (
             <TheLayout>
               <Component {...pageProps} />
               <BackTop />
             </TheLayout>
+          ) : (
+            <Component {...pageProps} />
           )}
         </AuthProvider>
       </CookiesProvider>
