@@ -3,6 +3,8 @@ import 'styles/globals.css'
 
 import Head from 'next/head'
 
+import { AuthProvider } from 'libs/contexts/auth'
+
 import { BackTop } from 'antd'
 
 import TheLayout from 'components/_App/TheLayout'
@@ -26,14 +28,16 @@ function MyApp({ Component, pageProps, router }) {
         <link rel="canonical" href="https://mibix-react.envytheme.com/"></link>
       </Head>
 
-      {router.route == '/' ? (
-        <Component {...pageProps} />
-      ) : (
-        <TheLayout>
+      <AuthProvider>
+        {router.route == '/' ? (
           <Component {...pageProps} />
-          <BackTop />
-        </TheLayout>
-      )}
+        ) : (
+          <TheLayout>
+            <Component {...pageProps} />
+            <BackTop />
+          </TheLayout>
+        )}
+      </AuthProvider>
     </>
   )
 }

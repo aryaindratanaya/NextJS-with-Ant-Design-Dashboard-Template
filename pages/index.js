@@ -1,6 +1,7 @@
+import { useAuth } from 'libs/contexts/auth'
+
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 
 import { Form, Input, Button, Checkbox, Typography, Layout } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
@@ -11,11 +12,10 @@ const { Text } = Typography
 const { Header, Footer } = Layout
 
 export default function Login() {
-  const router = useRouter()
+  const { authenticate } = useAuth()
 
   const onFinish = (values) => {
-    console.log(values)
-    router.push('/dashboard')
+    authenticate(values)
   }
 
   return (
