@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext } from 'react'
 
 import { useRouter } from 'next/router'
 
@@ -9,13 +9,10 @@ const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
   const router = useRouter()
 
-  const [isAuth, setAuth] = useState(false)
-
   const authenticate = (data) => {
     const { username, password, remember } = data
 
     if (username === 'admin' && password === 'admin' && remember) {
-      setAuth(true)
       toast({ message: 'Hi, *User Name*!' })
       router.push('/dashboard')
     } else {
@@ -28,14 +25,12 @@ export const AuthProvider = ({ children }) => {
   }
 
   const logout = () => {
-    setAuth(false)
     router.push('/')
   }
 
   return (
     <AuthContext.Provider
       value={{
-        isAuth,
         authenticate,
         logout,
       }}
