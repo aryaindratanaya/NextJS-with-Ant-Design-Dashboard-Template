@@ -38,6 +38,7 @@ export default function TheHeader({
 
       <div className={s.rightItems}>
         <Dropdown
+          trigger={['click']}
           overlay={
             <Menu>
               <Menu.Item key="profile" icon={<UserOutlined />}>
