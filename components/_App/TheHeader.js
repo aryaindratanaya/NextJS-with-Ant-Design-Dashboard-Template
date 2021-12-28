@@ -1,6 +1,6 @@
 import { useAuth } from 'libs/contexts/auth'
 
-import { Layout, Menu, Dropdown, Avatar } from 'antd'
+import { Layout, Menu, Dropdown, Avatar, Typography } from 'antd'
 import {
   UserOutlined,
   MenuFoldOutlined,
@@ -58,7 +58,9 @@ export default function TheHeader({
             </Menu>
           }
         >
-          <Avatar src="https://joeschmoe.io/api/v1/random" />
+          <Typography.Link>
+            <Avatar src="https://joeschmoe.io/api/v1/random" />
+          </Typography.Link>
         </Dropdown>
       </div>
     </Header>
