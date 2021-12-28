@@ -1,18 +1,25 @@
 import { createContext, useContext } from 'react'
+import { useCookies } from 'react-cookie'
 
 import { useRouter } from 'next/router'
 
 import toast from 'libs/utils/toast'
+import config from 'config'
 
 const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
   const router = useRouter()
+  const [_, setCookie, removeCookie] = useCookies([config.COOKIE_NAME])
 
   const authenticate = (data) => {
     const { username, password, remember } = data
 
     if (username === 'admin' && password === 'admin' && remember) {
+      setCookie('access_token', 'justanotherrandomstring', {
+        path: '/',
+      })
+
       toast({ message: 'Hi, *User Name*!' })
       router.push('/dashboard')
     } else {
@@ -25,6 +32,7 @@ export const AuthProvider = ({ children }) => {
   }
 
   const logout = () => {
+    removeCookie('access_token')
     router.push('/')
   }
 

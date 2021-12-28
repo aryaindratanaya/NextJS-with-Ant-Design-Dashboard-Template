@@ -1,3 +1,5 @@
+import { CookiesProvider } from 'react-cookie'
+
 import 'styles/antd.less'
 import 'styles/globals.css'
 
@@ -28,16 +30,18 @@ function MyApp({ Component, pageProps, router }) {
         <link rel="canonical" href="https://mibix-react.envytheme.com/"></link>
       </Head>
 
-      <AuthProvider>
-        {router.route == '/' ? (
-          <Component {...pageProps} />
-        ) : (
-          <TheLayout>
+      <CookiesProvider>
+        <AuthProvider>
+          {router.route == '/' ? (
             <Component {...pageProps} />
-            <BackTop />
-          </TheLayout>
-        )}
-      </AuthProvider>
+          ) : (
+            <TheLayout>
+              <Component {...pageProps} />
+              <BackTop />
+            </TheLayout>
+          )}
+        </AuthProvider>
+      </CookiesProvider>
     </>
   )
 }
