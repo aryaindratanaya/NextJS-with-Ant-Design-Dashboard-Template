@@ -1,5 +1,3 @@
-import { useAuth } from 'libs/contexts/auth'
-
 import { Layout, Menu, Dropdown, Avatar, Typography } from 'antd'
 import {
   UserOutlined,
@@ -9,6 +7,8 @@ import {
   SettingOutlined,
   LogoutOutlined,
 } from '@ant-design/icons'
+
+import { useAuth } from 'libs/contexts/auth'
 
 import s from 'styles/components/_App/TheHeader.module.css'
 

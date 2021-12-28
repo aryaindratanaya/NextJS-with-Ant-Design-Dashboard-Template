@@ -3,11 +3,11 @@ import 'styles/globals.css'
 
 import Head from 'next/head'
 
-import { AuthProvider } from 'libs/contexts/auth'
-
 import { BackTop } from 'antd'
 
 import TheLayout from 'components/_App/TheLayout'
+
+import { AuthProvider } from 'libs/contexts/auth'
 
 function MyApp({ Component, pageProps, router }) {
   return (

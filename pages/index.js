@@ -1,10 +1,10 @@
-import { useAuth } from 'libs/contexts/auth'
-
 import Head from 'next/head'
 import Image from 'next/image'
 
 import { Form, Input, Button, Checkbox, Typography, Layout } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
+
+import { useAuth } from 'libs/contexts/auth'
 
 import s from 'styles/Login.module.css'
 
