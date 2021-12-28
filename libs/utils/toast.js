@@ -1,14 +1,9 @@
 import { notification } from 'antd'
 
-const toast = (type = 'success', message) => {
-  const title = {
-    success: 'Success',
-    error: 'Ooops',
-  }
-
+const toast = ({ type = 'success', message = type, description }) => {
   notification[type]({
-    message: title[type],
-    description: message,
+    message: message,
+    description: description,
     placement: 'bottomRight',
   })
 }
