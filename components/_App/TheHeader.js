@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { useAuth } from 'libs/contexts/auth'
 
 import { Layout, Menu, Dropdown, Avatar } from 'antd'
 import {
@@ -20,6 +20,8 @@ export default function TheHeader({
   setSiderCllps,
   setDrawerVsbl,
 }) {
+  const { logout } = useAuth()
+
   return (
     <Header className={`${s.header} ${isScreenBig && s.headerSticky}`}>
       <div className={s.leftItems}>
@@ -44,8 +46,13 @@ export default function TheHeader({
               <Menu.Item key="settings" icon={<SettingOutlined />}>
                 Settings
               </Menu.Item>
-              <Menu.Item key="logout" icon={<LogoutOutlined />} danger>
-                <Link href="/">Logout</Link>
+              <Menu.Item
+                key="logout"
+                onClick={logout}
+                icon={<LogoutOutlined />}
+                danger
+              >
+                Logout
               </Menu.Item>
             </Menu>
           }

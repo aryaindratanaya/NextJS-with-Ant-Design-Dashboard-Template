@@ -13,6 +13,7 @@ export const AuthProvider = ({ children }) => {
 
   const authenticate = (data) => {
     const { username, password, remember } = data
+
     if (username === 'admin' && password === 'admin' && remember) {
       setAuth(true)
       toast({ message: 'Hi, *User Name*!' })
@@ -26,7 +27,10 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  const logout = () => setAuth(false)
+  const logout = () => {
+    setAuth(false)
+    router.push('/')
+  }
 
   return (
     <AuthContext.Provider
