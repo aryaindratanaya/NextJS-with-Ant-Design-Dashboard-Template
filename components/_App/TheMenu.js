@@ -14,7 +14,7 @@ export default function TheMenu() {
   return (
     <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
       <Menu.Item key="1" icon={<HomeOutlined />}>
-        <Link href="/">Home</Link>
+        <Link href="/dashboard">Home</Link>
       </Menu.Item>
       <Menu.ItemGroup key="order" title="Order">
         <Menu.Item key="2" icon={<FormOutlined />}>
