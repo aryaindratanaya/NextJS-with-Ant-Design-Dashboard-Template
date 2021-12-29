@@ -12,6 +12,8 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter()
   const [_, setCookie, removeCookie] = useCookies([config.COOKIE_NAME])
 
+  const isAuth = true
+
   const authenticate = (data) => {
     const { username, password, remember } = data
 
@@ -39,6 +41,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
+        isAuth,
         authenticate,
         logout,
       }}

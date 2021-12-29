@@ -10,6 +10,7 @@ import { BackTop } from 'antd'
 import TheLayout from 'components/_App/TheLayout'
 
 import { AuthProvider } from 'libs/contexts/auth'
+import ProtectedRoute from 'libs/utils/ProtectedRoute'
 
 function MyApp({ Component, pageProps, router }) {
   return (
@@ -39,10 +40,12 @@ function MyApp({ Component, pageProps, router }) {
           ) : (
             // inside the dashboard directory
             // return the component with a dashboard layout
-            <TheLayout>
-              <Component {...pageProps} />
-              <BackTop />
-            </TheLayout>
+            <ProtectedRoute>
+              <TheLayout>
+                <Component {...pageProps} />
+                <BackTop />
+              </TheLayout>
+            </ProtectedRoute>
           )}
         </AuthProvider>
       </CookiesProvider>
