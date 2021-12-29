@@ -14,9 +14,15 @@ export const AuthProvider = ({ children }) => {
 
   const isAuth = true
 
-  const authenticate = (data) => {
-    const { username, password, remember } = data
-
+  /**
+   * Performs authentication to user's login credential.
+   * Set access_token cookie, pop a notification toast,
+   * and redirect user to dashboard page.
+   * @param {string} username
+   * @param {string} password
+   * @param {boolean} remember
+   */
+  const authenticate = ({ username, password, remember }) => {
     if (username === 'admin' && password === 'admin' && remember) {
       setCookie('access_token', 'justanotherrandomstring', {
         path: '/',
@@ -33,6 +39,10 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  /**
+   * Log out the user.
+   * remove access_token cookie and redirect user to homepage
+   */
   const logout = () => {
     removeCookie('access_token')
     router.push('/')
