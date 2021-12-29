@@ -32,13 +32,17 @@ function MyApp({ Component, pageProps, router }) {
 
       <CookiesProvider>
         <AuthProvider>
-          {router.pathname.startsWith('/dashboard') ? (
+          {!router.pathname.startsWith('/dashboard') ? (
+            // not inside the dashboard directory
+            // return the actual component
+            <Component {...pageProps} />
+          ) : (
+            // inside the dashboard directory
+            // return the component with a dashboard layout
             <TheLayout>
               <Component {...pageProps} />
               <BackTop />
             </TheLayout>
-          ) : (
-            <Component {...pageProps} />
           )}
         </AuthProvider>
       </CookiesProvider>
